@@ -17,7 +17,7 @@ class ListedBy extends StatelessWidget {
               "Listed By A Nigga".toUpperCase(),
               style: TextStyle(color: Colors.green),
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.abc))
+            IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz))
           ],
         ),
       ),
@@ -42,7 +42,7 @@ class Recommended extends StatelessWidget {
               "Recommended".toUpperCase(),
               style: TextStyle(color: Colors.green),
             ),
-            IconButton(onPressed: () {}, icon: Icon(Icons.abc))
+            IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz))
           ],
         ),
       ),
