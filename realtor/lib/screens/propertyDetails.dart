@@ -4,6 +4,8 @@ import 'package:realtor/reusables/details/askQuestion.dart';
 import 'package:realtor/reusables/details/estimate.dart';
 import 'package:realtor/reusables/details/hero.dart';
 import 'package:realtor/reusables/details/keyDetails.dart';
+import 'package:realtor/reusables/details/neighborhoodInfo.dart';
+import 'package:realtor/reusables/details/publicFacts.dart';
 import 'package:realtor/reusables/details/subHero.dart';
 
 class PropertyDetails extends StatelessWidget {
@@ -62,6 +64,10 @@ class PropertyDetails extends StatelessWidget {
             KeyDetails(),
             DetailDiv(),
             AskQn(),
+            DetailDiv(),
+            PublicFacts(),
+            DetailDiv(),
+            NeighborhoodInfo(),
             DetailDiv(),
           ],
         ),
