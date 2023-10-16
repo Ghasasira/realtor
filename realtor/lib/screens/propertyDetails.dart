@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:lorem_ipsum/lorem_ipsum.dart';
 import 'package:realtor/reusables/details/about_home.dart';
 import 'package:realtor/reusables/details/askQuestion.dart';
 import 'package:realtor/reusables/details/estimate.dart';
+import 'package:realtor/reusables/details/hearder.dart';
 import 'package:realtor/reusables/details/hero.dart';
 import 'package:realtor/reusables/details/keyDetails.dart';
 import 'package:realtor/reusables/details/neighborhoodInfo.dart';
 import 'package:realtor/reusables/details/publicFacts.dart';
+import 'package:realtor/reusables/details/schools.dart';
 import 'package:realtor/reusables/details/subHero.dart';
 
 class PropertyDetails extends StatelessWidget {
+  //static const disclaimer =
+  // loremIpsum(paragraphs: 1, words: 50, initWithLorem: true);
   const PropertyDetails({super.key});
 
   @override
@@ -67,8 +72,36 @@ class PropertyDetails extends StatelessWidget {
             DetailDiv(),
             PublicFacts(),
             DetailDiv(),
+            Schools(),
+            DetailDiv(),
             NeighborhoodInfo(),
             DetailDiv(),
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  DetailHeader(
+                    text: "Disclaimers",
+                  ),
+                  Text(
+                      "Copyright 2023 " + loremIpsum(paragraphs: 1, words: 50)),
+                ],
+              ),
+            ),
+            DetailDiv(),
+            Container(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Icon(Icons.house),
+                  Text(
+                      "Realtor is commited to ensure and abide by the FAIR HOUSING ACT and EQUAL OPPORTUNITIES ACT"),
+                  TextButton(
+                      onPressed: () {},
+                      child: Text("Read Realtor's Fair Housing Policy"))
+                ],
+              ),
+            ),
           ],
         ),
       ),

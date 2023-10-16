@@ -5,6 +5,7 @@ import 'package:realtor/screens/feed/feed.dart';
 import 'package:realtor/screens/findHomes.dart';
 import 'package:realtor/screens/myHomes/myhome.dart';
 import 'package:realtor/screens/myRealtor/myRealtor.dart';
+import 'package:realtor/screens/ownerDashboard.dart';
 import 'package:realtor/screens/propertyDetails.dart';
 
 void main() {
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PropertyDetails(),
+      home: OwnerDashboard(),
     );
   }
 }
