@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:realtor/reusables/universalPages/addHome.dart';
 import 'package:realtor/screens/myHomes/loadedMyHome.dart';
 
-class Myhome extends StatelessWidget {
+class Myhome extends StatefulWidget {
   const Myhome({super.key});
 
+  @override
+  State<Myhome> createState() => _MyhomeState();
+}
+
+class _MyhomeState extends State<Myhome> {
+  bool addingHome = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,16 +24,22 @@ class Myhome extends StatelessWidget {
           ),
         ),
         actions: [
-          TextButton(
-            onPressed: () {},
-            child: Text(
-              'ADD HOME',
-              style: TextStyle(color: Colors.black),
-            ),
-          )
+          addingHome
+              ? Text("")
+              : TextButton(
+                  onPressed: () {
+                    setState(() {
+                      addingHome = true;
+                    });
+                  },
+                  child: Text(
+                    'ADD HOME',
+                    style: TextStyle(color: Colors.black),
+                  ),
+                )
         ],
       ),
-      body: AddHome(), //LoadedMyHome(),
+      body: addingHome ? AddHome() : LoadedMyHome(),
     );
   }
 }

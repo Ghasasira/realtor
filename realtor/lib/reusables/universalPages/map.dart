@@ -34,7 +34,7 @@ class _MapwindowState extends State<Mapwindow> {
   @override
   void dispose() {
     // TODO: implement dispose
-
+    super.dispose();
     _controller.dispose();
   }
 

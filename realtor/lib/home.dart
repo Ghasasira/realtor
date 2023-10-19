@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
     const Feed(),
     const Favorite(),
     const Myhome(),
-    const MyRealtor()
+    const MyRealtor(),
   ];
 
   void _selectItem(int index) {

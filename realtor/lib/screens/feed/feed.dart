@@ -39,7 +39,7 @@ class Feed extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(5.0),
-          child: const EmptyFeed(), //FeedLoaded(),
+          child: const FeedLoaded(),
         ),
       ),
     );
