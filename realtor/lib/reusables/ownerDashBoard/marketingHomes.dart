@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
 
 class MarketingHomes extends StatelessWidget {
   const MarketingHomes({super.key});
@@ -11,12 +12,8 @@ class MarketingHomes extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Center(
-            child: Text(
-              "Marketing Your Home",
-              style: TextStyle(
-                fontSize: 28.0,
-                fontWeight: FontWeight.bold,
-              ),
+            child: OwnerHeader(
+              text: "Marketing Your Home",
             ),
           ),
         ),

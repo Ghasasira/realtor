@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/reusables/filterbutton.dart';
 import 'package:realtor/reusables/realtorButton.dart';
+import 'package:realtor/reusables/universalPages/map.dart';
+import 'package:realtor/screens/searchScreen.dart';
 
 class FindHomes extends StatelessWidget {
   const FindHomes({super.key});
@@ -7,23 +11,25 @@ class FindHomes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        body: Padding(
+      child: Container(
+        child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Container(
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height * 0.9,
             child: Column(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        Get.to(SearchScreen());
+                      },
                       child: Container(
                           width: MediaQuery.of(context).size.width * 0.80,
-                          height: 45.0,
+                          height: 35.0,
                           decoration: BoxDecoration(
-                              color: Colors.grey,
+                              color: const Color.fromARGB(255, 231, 229, 229),
                               borderRadius: BorderRadius.circular(10.0)),
                           child: const Padding(
                             padding: EdgeInsets.only(left: 10.0),
@@ -53,32 +59,31 @@ class FindHomes extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 100.0,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10.0),
-                        border: Border.all(color: Colors.black),
-                      ),
-                      child: const Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: Center(
-                          child: Text(
-                            "Filters",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
+                    FilterButton(onPressed: () {}, text: "filter"),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10.0),
+                      child: SizedBox(
+                        width: 120.0,
+                        child: RealtorButton(
+                          color: Colors.red,
+                          text: "Save Search",
+                          onpressed: () {},
+                          styles: TextStyle(),
                         ),
                       ),
-                    ),
-                    RealtorButton(
-                      color: Colors.red,
-                      text: "Save Search",
-                      onpressed: () {},
                     ),
                   ],
                 ),
                 SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.6,
+                  height: 30.0,
+                ),
+                Expanded(
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    //height: MediaQuery.of(context).size.height * 0.65,
+                    //color: Colors.amber,
+                    child: Mapwindow(),
+                  ),
                 )
               ],
             ),

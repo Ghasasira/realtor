@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
+import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
 import 'package:realtor/reusables/propertyCard.dart';
+import 'package:realtor/screens/ownerDashboard.dart';
 
 class ManageYourHome extends StatelessWidget {
   const ManageYourHome({super.key});
@@ -18,9 +20,8 @@ class ManageYourHome extends StatelessWidget {
           Center(
             child: Padding(
               padding: const EdgeInsets.only(bottom: 10.0, top: 10.0),
-              child: Text(
-                "Manage Your Home",
-                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+              child: OwnerHeader(
+                text: "Manage Your Home",
               ),
             ),
           ),
@@ -39,6 +40,7 @@ class ManageYourHome extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return PropertyCard(
                       bottom: ListedBy(),
+                      //page: OwnerDashboard(),
                     );
                   })),
         ],

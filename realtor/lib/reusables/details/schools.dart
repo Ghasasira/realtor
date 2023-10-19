@@ -21,6 +21,7 @@ class Schools extends StatelessWidget {
         Container(
           height: 90.0 * 4,
           child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
               itemCount: 4,
               itemBuilder: (itemCounter, context) {
                 return const SchoolCard();

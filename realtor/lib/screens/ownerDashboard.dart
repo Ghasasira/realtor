@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
+import 'package:realtor/reusables/ownerDashBoard/homeOwnerTools.dart';
+import 'package:realtor/reusables/ownerDashBoard/homeworth.dart';
 import 'package:realtor/reusables/ownerDashBoard/manageYourHome.dart';
+import 'package:realtor/reusables/ownerDashBoard/marketTrends.dart';
 import 'package:realtor/reusables/ownerDashBoard/marketingHomes.dart';
+import 'package:realtor/reusables/ownerDashBoard/realtorEstimate.dart';
 import 'package:realtor/reusables/ownerDashBoard/recentlyListed.dart';
 import 'package:realtor/reusables/ownerDashBoard/recentlySold.dart';
+import 'package:realtor/reusables/ownerDashBoard/topArea.dart';
 import 'package:realtor/reusables/realtorButton.dart';
 
 class OwnerDashboard extends StatelessWidget {
@@ -42,7 +48,46 @@ class OwnerDashboard extends StatelessWidget {
               ),
             ),
             //
-
+            TopArea(),
+            DashDiv(),
+            OwnerHeader(
+              text:
+                  "Sell your home for more, pay a 1% listing fee when you sell and buy",
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: RealtorButton(
+                text: "Schedule Selling Consultation",
+                color: Colors.red,
+                onpressed: () {},
+                styles: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            Divider(
+              color: Colors.black,
+              thickness: 1.0,
+            ),
+            //DashDiv(),
+            Text("Or, talk to a Realtor Agent about your home's value."),
+            SizedBox(
+              height: 10.0,
+            ),
+            GestureDetector(
+                onTap: () {},
+                child: Text(
+                  "Request a free analysis",
+                  style: TextStyle(
+                    color: Colors.blue,
+                  ),
+                )),
+            DashDiv(),
+            RealtorEstimate(),
+            HomeWorth(),
+            OwnerTools(),
+            DashDiv(),
+            MarketTrends(),
             DashDiv(),
             MarketingHomes(),
             DashDiv(),

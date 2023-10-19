@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
 import 'package:realtor/reusables/propertyCard.dart';
+import 'package:realtor/screens/ownerDashboard.dart';
 
 class LoadedMyHome extends StatelessWidget {
   const LoadedMyHome({super.key});
@@ -28,13 +29,14 @@ class LoadedMyHome extends StatelessWidget {
         ),
         SingleChildScrollView(
           child: Container(
-            height: (MediaQuery.of(context).size.height - 150),
+            height: (MediaQuery.of(context).size.height - 200),
             child: ListView.builder(
               itemCount: 3,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: PropertyCard(
+                    page: OwnerDashboard(),
                     bottom: ListedBy(),
                   ),
                 );

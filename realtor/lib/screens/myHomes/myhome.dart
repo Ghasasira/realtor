@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/reusables/universalPages/addHome.dart';
 import 'package:realtor/screens/myHomes/loadedMyHome.dart';
 
 class Myhome extends StatelessWidget {
@@ -26,7 +27,7 @@ class Myhome extends StatelessWidget {
           )
         ],
       ),
-      body: LoadedMyHome(),
+      body: AddHome(), //LoadedMyHome(),
     );
   }
 }

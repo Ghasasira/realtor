@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/reusables/universalPages/feedSetting.dart';
+import 'package:realtor/screens/feed/feedEmpty.dart';
 import 'package:realtor/screens/feed/feedLoaded.dart';
 
 class Feed extends StatelessWidget {
@@ -23,7 +26,9 @@ class Feed extends StatelessWidget {
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(FeedSettings());
+              },
               icon: const Icon(
                 Icons.settings,
                 size: 30,
@@ -34,7 +39,7 @@ class Feed extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.all(5.0),
-          child: const FeedLoaded(),
+          child: const EmptyFeed(), //FeedLoaded(),
         ),
       ),
     );

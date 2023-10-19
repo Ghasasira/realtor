@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:realtor/home.dart';
 import 'package:realtor/screens/Favorite/favorite.dart';
 import 'package:realtor/screens/feed/feed.dart';
 import 'package:realtor/screens/findHomes.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OwnerDashboard(),
+      home: Home(),
     );
   }
 }

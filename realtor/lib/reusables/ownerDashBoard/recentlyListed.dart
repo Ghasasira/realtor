@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
+import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
 import 'package:realtor/reusables/propertyCard.dart';
 
 class RecentlyListed extends StatelessWidget {
@@ -17,9 +18,8 @@ class RecentlyListed extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(bottom: 10.0, top: 10.0),
-            child: Text(
-              "Recently Listed",
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+            child: OwnerHeader(
+              text: "Recently Listed",
             ),
           ),
           Container(
