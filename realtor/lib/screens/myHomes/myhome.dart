@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:realtor/reusables/universalPages/addHome.dart';
+import 'package:realtor/screens/myHomes/emptyMyHome.dart';
 import 'package:realtor/screens/myHomes/loadedMyHome.dart';
 
 class Myhome extends StatefulWidget {
@@ -20,7 +21,7 @@ class _MyhomeState extends State<Myhome> {
           'My Home',
           style: TextStyle(
             color: Colors.black,
-            fontSize: 28,
+            //fontSize: 28,
           ),
         ),
         actions: [
@@ -39,7 +40,8 @@ class _MyhomeState extends State<Myhome> {
                 )
         ],
       ),
-      body: addingHome ? AddHome() : LoadedMyHome(),
+      body: addingHome ? AddHome() : EmptyMyHome(),
+      //addingHome ? AddHome() : LoadedMyHome(),
     );
   }
 }

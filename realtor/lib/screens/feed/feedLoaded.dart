@@ -17,7 +17,7 @@ class FeedLoaded extends StatelessWidget {
             child: Text(
               "Updates",
               //textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 26.0, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
             ),
           ),
           //PropertyCard(),

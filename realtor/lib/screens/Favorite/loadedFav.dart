@@ -26,7 +26,7 @@ class LoadedFav extends StatelessWidget {
                 "My Shortlist",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 24.0,
+                  fontSize: 20.0,
                 ),
               ),
               TextButton(
@@ -58,7 +58,7 @@ class LoadedFav extends StatelessWidget {
             "My Favorites",
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 24.0,
+              fontSize: 20.0,
             ),
           ),
         ),
@@ -126,7 +126,7 @@ class LoadedFav extends StatelessWidget {
         Container(
           height: MediaQuery.of(context).size.height,
           child: ListView.builder(
-            physics: ScrollPhysics(),
+            //physics: NeverScrollableScrollPhysics(),
             itemCount: 12,
             itemBuilder: (context, index) {
               return Padding(
@@ -137,6 +137,9 @@ class LoadedFav extends StatelessWidget {
               );
             },
           ),
+        ),
+        SizedBox(
+          height: 5.0,
         ),
       ],
     );
@@ -160,7 +163,7 @@ class ShortlistItem extends StatelessWidget {
         decoration: BoxDecoration(),
         child: Icon(
           Icons.house_outlined,
-          size: 50,
+          size: 40,
         ),
       ),
     );

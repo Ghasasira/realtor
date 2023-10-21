@@ -53,19 +53,22 @@ class PropertyCard extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text.rich(
-                          //textAlign: TextAlign.left,
-                          TextSpan(
-                            text: "\$ 50000",
-                            style: TextStyle(
-                                fontSize: 24.0, fontWeight: FontWeight.bold),
-                            children: <TextSpan>[
-                              TextSpan(
-                                text: " Sale price",
-                                style: TextStyle(
-                                    fontSize: 14.0, color: Colors.blueGrey),
-                              )
-                            ],
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10.0),
+                          child: Text.rich(
+                            //textAlign: TextAlign.left,
+                            TextSpan(
+                              text: "\$ 50000",
+                              style: TextStyle(
+                                  fontSize: 19.0, fontWeight: FontWeight.bold),
+                              children: <TextSpan>[
+                                TextSpan(
+                                  text: " Sale price",
+                                  style: TextStyle(
+                                      fontSize: 10.0, color: Colors.blueGrey),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                         Wrap(
@@ -76,7 +79,7 @@ class PropertyCard extends StatelessWidget {
                             Text(
                               "ll23 Street, Kampala, Uganda",
                               style: TextStyle(
-                                  fontSize: 20.0, fontWeight: FontWeight.w500),
+                                  fontSize: 16.0, fontWeight: FontWeight.w500),
                             ),
                           ],
                         ),
@@ -103,8 +106,8 @@ class PropertyCard extends StatelessWidget {
               ],
             ),
             bottom!
-            //Recommended(),
-            //ListedBy(),
+            // Recommended(),
+            // ListedBy(),
           ],
         ),
       ),

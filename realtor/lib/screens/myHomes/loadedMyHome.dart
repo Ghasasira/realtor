@@ -21,7 +21,7 @@ class LoadedMyHome extends StatelessWidget {
               "3 Homes",
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 25,
+                fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),

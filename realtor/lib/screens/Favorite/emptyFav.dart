@@ -16,18 +16,18 @@ class EmptyFav extends StatelessWidget {
         ),
         Text(
           'You have no Favorites',
-          style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
         ),
         Text(
           "Favorite homes while you browse to stay upto date on their price changes",
-          style: TextStyle(fontSize: 16),
+          style: TextStyle(),
         ),
         Container(
           width: MediaQuery.of(context).size.width,
           child: RealtorButton(
             text: "Browse Homes",
             color: Colors.red,
-            styles: const TextStyle(fontSize: 20),
+            styles: const TextStyle(fontSize: 18),
             onpressed: () {},
           ),
         )

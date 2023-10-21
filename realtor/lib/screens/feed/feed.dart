@@ -19,7 +19,6 @@ class Feed extends StatelessWidget {
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 35,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -31,7 +30,7 @@ class Feed extends StatelessWidget {
               },
               icon: const Icon(
                 Icons.settings,
-                size: 30,
+                size: 20,
                 color: Colors.black,
               ),
             ),

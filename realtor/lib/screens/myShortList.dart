@@ -25,21 +25,31 @@ class MyShortlist extends StatelessWidget {
           )),
       body: Container(
         child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Container(
-              height: (MediaQuery.of(context).size.height),
-              child: ListView.builder(
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(bottom: 10.0),
-                    child: PropertyCard(
-                      //page: OwnerDashboard(),
-                      bottom: ListedBy(),
+          child: Container(
+            height: (MediaQuery.of(context).size.height),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  Container(
+                    height: (MediaQuery.of(context).size.height * 0.9),
+                    child: ListView.builder(
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(bottom: 10.0),
+                          child: PropertyCard(
+                            //page: OwnerDashboard(),
+                            bottom: ListedBy(),
+                          ),
+                        );
+                      },
                     ),
-                  );
-                },
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                ],
               ),
             ),
           ),
