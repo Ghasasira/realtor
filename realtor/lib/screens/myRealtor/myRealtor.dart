@@ -12,7 +12,9 @@ class MyRealtor extends StatelessWidget {
           title: Text(
             'Ghus Josh',
             style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 30, color: Colors.black),
+                fontWeight: FontWeight.bold,
+                fontSize: 20.0,
+                color: Colors.black),
           ),
           actions: [
             Padding(
@@ -88,7 +90,7 @@ class MyRealtor extends StatelessWidget {
                 "SignOut(Ghus Josh)",
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 20,
+                  fontSize: 16.0,
                 ),
               ),
             ),

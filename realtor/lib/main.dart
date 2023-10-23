@@ -22,7 +22,22 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       //theme:,
-      theme: ThemeData(fontFamily: "Montserrat"),
+      theme: ThemeData(
+          fontFamily: "Montserrat",
+          textTheme: TextTheme(
+            bodySmall: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+            bodyMedium: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+            bodyLarge: TextStyle(
+              fontWeight: FontWeight.w600,
+              color: Colors.black,
+            ),
+          )),
       home: Home(),
     );
   }

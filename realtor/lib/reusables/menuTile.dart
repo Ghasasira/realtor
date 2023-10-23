@@ -22,12 +22,12 @@ class MenuTile extends StatelessWidget {
         child: ListTile(
           leading: Icon(
             icon,
-            size: 30.0,
+            size: 24.0,
           ),
           title: Text(
             label!,
             style: TextStyle(
-              fontSize: 20.0,
+              fontSize: 18.0,
             ),
           ),
         ),
