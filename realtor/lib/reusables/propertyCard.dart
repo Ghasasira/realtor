@@ -1,18 +1,53 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
+import 'package:realtor/screens/ownerDashboard.dart';
 import 'package:realtor/screens/propertyDetails.dart';
 
 class PropertyCard extends StatelessWidget {
   final Widget? bottom;
-  final Widget? page;
-  PropertyCard({super.key, this.bottom, this.page});
+  final String? page;
+  final double? price;
+  final double? beds;
+  final double? baths;
+  final double? sqft;
+  final String? street;
+  final String? city;
+  final String? state;
+  final String? status;
+  final int? id;
+  final String? listedBy;
+  PropertyCard({
+    super.key,
+    this.bottom,
+    this.listedBy,
+    this.page,
+    this.baths,
+    this.beds,
+    this.price,
+    this.sqft,
+    this.state,
+    this.city,
+    this.status,
+    this.street,
+    this.id,
+  });
 
+  PropertyController propertyController = Get.find();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        page != null ? Get.to(page) : Get.to(PropertyDetails());
+        int idNo = id!;
+        //propertyController.fetchSingleItem(idNo);
+        if (page == "ownerDashboard") {
+          propertyController.fetchSingleMyHomeItem(idNo);
+          Get.to(OwnerDashboard(id: idNo));
+        } else {
+          propertyController.fetchSingleItem(idNo);
+          Get.to(PropertyDetails(id: idNo));
+        }
       },
       child: Card(
         elevation: 5.0,
@@ -35,7 +70,7 @@ class PropertyCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Text(
-                        "For Sale",
+                        status!, // "For Sale",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -58,7 +93,7 @@ class PropertyCard extends StatelessWidget {
                           child: Text.rich(
                             //textAlign: TextAlign.left,
                             TextSpan(
-                              text: "\$ 50000",
+                              text: "\$ $price",
                               style: TextStyle(
                                   fontSize: 19.0, fontWeight: FontWeight.bold),
                               children: <TextSpan>[
@@ -72,12 +107,14 @@ class PropertyCard extends StatelessWidget {
                           ),
                         ),
                         Wrap(
-                          children: [Text("3.0 Beds 2.0 baths, 920.0 Sq.Ft.")],
+                          children: [
+                            Text("$beds Beds $baths baths, $sqft Sq.Ft.")
+                          ],
                         ),
                         Wrap(
                           children: [
                             Text(
-                              "ll23 Street, Kampala, Uganda",
+                              "$street, $city, $state",
                               style: TextStyle(
                                   fontSize: 16.0, fontWeight: FontWeight.w500),
                             ),
@@ -93,7 +130,10 @@ class PropertyCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          int propId = id!;
+                          propertyController.addToFav(propId);
+                        },
                         icon: Icon(Icons.favorite_border_outlined),
                       ),
                       IconButton(
@@ -106,8 +146,6 @@ class PropertyCard extends StatelessWidget {
               ],
             ),
             bottom!
-            // Recommended(),
-            // ListedBy(),
           ],
         ),
       ),

@@ -1,5 +1,6 @@
 List all = [
   {
+    "id": 1,
     "price": 250000.0,
     'beds': 3.0,
     'baths': 2.5,
@@ -18,6 +19,7 @@ List all = [
     "images": ["image1.jpg", "image2.jpg"],
   },
   {
+    "id": 2,
     "price": 320000.0,
     'beds': 4.0,
     'baths': 3.0,
@@ -36,6 +38,7 @@ List all = [
     "images": ["image3.jpg", "image4.jpg"],
   },
   {
+    "id": 3,
     "price": 175000.0,
     'beds': 2.0,
     'baths': 1.0,
@@ -54,6 +57,7 @@ List all = [
     "images": ["image5.jpg", "image6.jpg"],
   },
   {
+    "id": 4,
     "price": 290000.0,
     'beds': 3.5,
     'baths': 2.0,
@@ -72,6 +76,7 @@ List all = [
     "images": ["image7.jpg", "image8.jpg"],
   },
   {
+    "id": 5,
     "price": 210000.0,
     'beds': 2.5,
     'baths': 2.0,
@@ -90,6 +95,7 @@ List all = [
     "images": ["image9.jpg", "image10.jpg"],
   },
   {
+    "id": 6,
     "price": 185000.0,
     'beds': 2.0,
     'baths': 1.5,
@@ -108,6 +114,7 @@ List all = [
     "images": ["image11.jpg", "image12.jpg"],
   },
   {
+    "id": 7,
     "price": 260000.0,
     'beds': 3.0,
     'baths': 2.0,
@@ -126,6 +133,7 @@ List all = [
     "images": ["image13.jpg", "image14.jpg"],
   },
   {
+    "id": 8,
     "price": 300000.0,
     'beds': 4.0,
     'baths': 3.5,
@@ -144,6 +152,7 @@ List all = [
     "images": ["image15.jpg", "image16.jpg"],
   },
   {
+    "id": 9,
     "price": 240000.0,
     'beds': 3.0,
     'baths': 2.0,
@@ -162,6 +171,67 @@ List all = [
     "images": ["image17.jpg", "image18.jpg"],
   },
   {
+    "id": 10,
+    "price": 280000.0,
+    'beds': 4.0,
+    'baths': 2.5,
+    'sqft': 2100.0,
+    'agentCommision': 14000.0,
+    'lot': 0.28,
+    'location': ["Latitude 33.4484", "Longitude -112.0740"],
+    'listedBy': "Jennifer White",
+    'street': "456 Pine St",
+    'city': "Lasttown",
+    'state': "AZ",
+    'style': "Colonial",
+    'built': "1995",
+    "status": "For Sale",
+    "open": "Open House on 10/28/2023",
+    "images": ["image17.jpg", "image18.jpg"],
+  }
+];
+
+List myProps = [
+  {
+    "id": 8,
+    "price": 300000.0,
+    'beds': 4.0,
+    'baths': 3.5,
+    'sqft': 2200.0,
+    'agentCommision': 15000.0,
+    'lot': 0.3,
+    'location': ["Latitude 37.7749", "Longitude -122.4194"],
+    'listedBy': "Linda Adams",
+    'street': "678 Elm St",
+    'city': "Smallville",
+    'state': "CA",
+    'style': "Ranch",
+    'built': "2008",
+    "status": "For Sale",
+    "open": "Open House on 10/27/2023",
+    "images": ["image15.jpg", "image16.jpg"],
+  },
+  {
+    "id": 9,
+    "price": 240000.0,
+    'beds': 3.0,
+    'baths': 2.0,
+    'sqft': 1700.0,
+    'agentCommision': 12000.0,
+    'lot': 0.24,
+    'location': ["Latitude 42.3601", "Longitude -71.0589"],
+    'listedBy': "Robert Miller",
+    'street': "123 Oak St",
+    'city': "Tinyville",
+    'state': "MA",
+    'style': "Cape Cod",
+    'built': "1995",
+    "status": "For Sale",
+    "open": "Open House on 10/28/2023",
+    "images": ["image17.jpg", "image18.jpg"],
+  },
+  {
+    "id": 10,
     "price": 280000.0,
     'beds': 4.0,
     'baths': 2.5,

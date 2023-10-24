@@ -9,7 +9,7 @@ class OwnerHeader extends StatelessWidget {
     return Text(
       text!,
       style: TextStyle(
-        fontSize: 28.0,
+        fontSize: 18.0,
         fontWeight: FontWeight.bold,
       ),
     );

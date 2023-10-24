@@ -15,8 +15,10 @@ class House {
   final String? status;
   final String? open;
   final List? images;
+  final int id;
 
   House({
+    required this.id,
     this.images,
     this.agentCommision,
     this.baths,

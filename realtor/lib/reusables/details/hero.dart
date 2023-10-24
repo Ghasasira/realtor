@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 
 class HeroSection extends StatelessWidget {
-  const HeroSection({super.key});
+  final PropertyController controller;
+  HeroSection({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,9 @@ class HeroSection extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "\$ 100,000",
+                  "\$ ${controller.singleHouse[0].price}",
                   style: TextStyle(
-                    fontSize: 25,
+                    fontSize: 20,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
                   ),
@@ -34,7 +37,6 @@ class HeroSection extends StatelessWidget {
               ],
             ),
             Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 5.0, right: 5.0),
@@ -42,9 +44,9 @@ class HeroSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "3.0",
+                        controller.singleHouse[0].beds.toString(),
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
@@ -59,9 +61,9 @@ class HeroSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "2.0",
+                        controller.singleHouse[0].baths.toString(),
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
@@ -76,9 +78,9 @@ class HeroSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "800.00",
+                        controller.singleHouse[0].sqft.toString(),
                         style: TextStyle(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
                         ),
@@ -95,12 +97,13 @@ class HeroSection extends StatelessWidget {
           height: 15.0,
         ),
         Text(
-          "23 Yellow Street".toUpperCase(),
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          controller.singleHouse[0].street.toUpperCase(),
+          style: TextStyle(fontSize: 16, color: Colors.black),
         ),
         Text(
-          "Wandegeya, K'LA,".toUpperCase(),
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          "${controller.singleHouse[0].city}, ${controller.singleHouse[0].state}"
+              .toUpperCase(),
+          style: TextStyle(fontSize: 16, color: Colors.black),
         ),
       ],
     );

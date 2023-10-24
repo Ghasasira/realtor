@@ -18,9 +18,9 @@ class MarketTrends extends StatelessWidget {
         ),
         Text(
           "How single-family homes have sold per year",
-          style: TextStyle(
-            fontSize: 20,
-          ),
+          // style: TextStyle(
+          //     fontSize: 20,
+          //     ),
         ),
         Padding(
           padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -29,8 +29,8 @@ class MarketTrends extends StatelessWidget {
               Text(
                 "\$ 278,450",
                 style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
                 ),
               ),
               SizedBox(

@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
 import 'package:realtor/reusables/propertyCard.dart';
 
 class FeedLoaded extends StatelessWidget {
   const FeedLoaded({super.key});
 
+  // PropertyController propertyController = Get.find();
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -26,16 +30,29 @@ class FeedLoaded extends StatelessWidget {
           Container(
             height: MediaQuery.of(context).size.height,
             child: ListView.builder(
-              itemCount: 12,
+              itemCount: propertyController.allProperty.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: PropertyCard(
-                    bottom: Recommended(),
+                    bottom: const Recommended(),
+                    status: propertyController.allProperty[index].status,
+                    price: propertyController.allProperty[index].price,
+                    beds: propertyController.allProperty[index].beds,
+                    baths: propertyController.allProperty[index].baths,
+                    sqft: propertyController.allProperty[index].sqft,
+                    street: propertyController.allProperty[index].street,
+                    city: propertyController.allProperty[index].city,
+                    state: propertyController.allProperty[index].state,
+                    listedBy: propertyController.allProperty[index].listedBy,
+                    id: propertyController.allProperty[index].id,
                   ),
                 );
               },
             ),
+          ),
+          Container(
+            height: 300.0,
           ),
         ],
       ),

@@ -31,7 +31,7 @@ class AskQn extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
           child: SizedBox(
             height: 60.0,
-            width: MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width * 0.95,
             child: RealtorButton(
               color: Color.fromARGB(255, 250, 245, 245),
               text:
@@ -41,13 +41,24 @@ class AskQn extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(
-          width: MediaQuery.of(context).size.width,
-          child: RealtorButton(
-            color: Colors.red,
-            text: "Ask Question",
-            styles: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
-            onpressed: () {},
+        GestureDetector(
+          onTap: () {},
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.95,
+            height: 40.0,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            child: Center(
+              child: Text(
+                "Ask Question",
+                style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    color: Colors.black,
+                    fontSize: 18.0),
+              ),
+            ),
           ),
         )
       ],

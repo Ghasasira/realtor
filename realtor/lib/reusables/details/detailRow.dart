@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class DetailsRow extends StatelessWidget {
-  final String? label;
-  final String? value;
+  final String label;
+  final String value;
   DetailsRow({
-    this.label,
-    this.value,
+    required this.label,
+    required this.value,
     super.key,
   });
 

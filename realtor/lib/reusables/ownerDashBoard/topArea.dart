@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
 
 class TopArea extends StatelessWidget {
-  const TopArea({super.key});
+  final PropertyController controller;
+  const TopArea({
+    super.key,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,7 @@ class TopArea extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 100.0,
+                height: 120.0,
                 width: MediaQuery.of(context).size.width * 0.3,
                 color: Colors.blue,
               ),
@@ -29,16 +34,22 @@ class TopArea extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "455 Street",
-                      style: TextStyle(fontSize: 20.0),
+                      controller.singleMyHouse[0].street,
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    SizedBox(
+                      height: 4.0,
                     ),
                     Text(
-                      "Wandegeya, Kampala",
-                      style: TextStyle(fontSize: 20.0),
+                      "${controller.singleMyHouse[0].city}, ${controller.singleMyHouse[0].state}",
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                    SizedBox(
+                      height: 4.0,
                     ),
                     Text(
-                      "2.0 Beds  •  3.0 Baths  •  122.1 Sq.Ft.",
-                      style: TextStyle(fontSize: 18.0),
+                      "${controller.singleMyHouse[0].beds} Beds  •  ${controller.singleMyHouse[0].baths} Baths  •  ${controller.singleMyHouse[0].sqft} Sq.Ft.",
+                      style: TextStyle(),
                     ),
                     Row(
                       children: [
@@ -46,14 +57,14 @@ class TopArea extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             "Edit photos",
-                            style: TextStyle(fontSize: 18.0),
+                            //style: TextStyle(fontSize: 18.0),
                           ),
                         ),
                         TextButton(
                           onPressed: () {},
                           child: Text(
                             "Edit facts",
-                            style: TextStyle(fontSize: 18.0),
+                            // style: TextStyle(fontSize: 18.0),
                           ),
                         ),
                       ],
@@ -63,6 +74,9 @@ class TopArea extends StatelessWidget {
               )
             ],
           ),
+          SizedBox(
+            height: 15.0,
+          ),
           OwnerHeader(
             text: "Market snapshot",
           ),
@@ -70,7 +84,7 @@ class TopArea extends StatelessWidget {
             padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
             child: Text(
               "Based on the last 30 days",
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontSize: 15),
             ),
           ),
           Row(
@@ -118,7 +132,7 @@ class OwnerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 180.0,
+      height: 150.0,
       width: width,
       child: Card(
         elevation: 5.0,
@@ -137,21 +151,21 @@ class OwnerCard extends StatelessWidget {
                 title!,
                 style: TextStyle(
                   color: Colors.blue,
-                  fontSize: 18.0,
+                  //fontSize: 1.0,
                 ),
               ),
               Text(
                 value!,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 26.0,
+                  fontSize: 20.0,
                 ),
               ),
               Text(
                 stat!,
                 style: TextStyle(
-                  fontSize: 16.0,
-                ),
+//fontSize: 16.0,
+                    ),
               ),
             ],
           ),

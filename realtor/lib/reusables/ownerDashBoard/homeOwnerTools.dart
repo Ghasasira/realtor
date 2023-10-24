@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
 
 class OwnerTools extends StatelessWidget {
@@ -12,11 +13,14 @@ class OwnerTools extends StatelessWidget {
         OwnerHeader(
           text: "Home Owner tools",
         ),
+        SizedBox(
+          height: 10.0,
+        ),
         Text(
           "Manage how your home looks on Realtor or create a personal Owner Estimate, allowing you to select your own comparable homes.",
-          style: TextStyle(
-            fontSize: 16.0,
-          ),
+        ),
+        SizedBox(
+          height: 10.0,
         ),
         ToolButton(icon: Icons.edit, text: "Edit home facts"),
         ToolButton(icon: Icons.image, text: "Manage photos"),

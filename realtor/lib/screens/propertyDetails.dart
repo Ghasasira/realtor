@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lorem_ipsum/lorem_ipsum.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/details/about_home.dart';
 import 'package:realtor/reusables/details/askQuestion.dart';
 import 'package:realtor/reusables/details/estimate.dart';
@@ -12,9 +14,10 @@ import 'package:realtor/reusables/details/schools.dart';
 import 'package:realtor/reusables/details/subHero.dart';
 
 class PropertyDetails extends StatelessWidget {
-  //static const disclaimer =
-  // loremIpsum(paragraphs: 1, words: 50, initWithLorem: true);
-  const PropertyDetails({super.key});
+  final int id;
+  PropertyDetails({super.key, required this.id});
+
+  PropertyController propertyController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -58,19 +61,19 @@ class PropertyDetails extends StatelessWidget {
         padding: const EdgeInsets.all(5.0),
         child: ListView(
           children: [
-            HeroSection(),
+            HeroSection(controller: propertyController),
             DetailDiv(),
-            SubHero(),
+            SubHero(controller: propertyController),
             DetailDiv(),
             Estimate(),
             DetailDiv(),
-            AboutHome(),
+            AboutHome(controller: propertyController),
             DetailDiv(),
-            KeyDetails(),
+            KeyDetails(controller: propertyController),
             DetailDiv(),
             AskQn(),
             DetailDiv(),
-            PublicFacts(),
+            PublicFacts(controller: propertyController),
             DetailDiv(),
             Schools(),
             DetailDiv(),

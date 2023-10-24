@@ -16,11 +16,11 @@ class HomeWorth extends StatelessWidget {
             OwnerHeader(
               text: "What is my home worth?",
             ),
+            SizedBox(
+              height: 10.0,
+            ),
             Text(
               "Get a Realtor Sales Advisor's opinion on your home's value and learn more about your towns market.",
-              style: TextStyle(
-                fontSize: 18.0,
-              ),
             ),
             Container(
               width: MediaQuery.of(context).size.width,
@@ -30,7 +30,7 @@ class HomeWorth extends StatelessWidget {
                 onpressed: () {},
                 styles: TextStyle(
                   color: Colors.white,
-                  fontSize: 18.0,
+                  //fontSize: 18.0,
                 ),
               ),
             ),

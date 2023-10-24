@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ListedBy extends StatelessWidget {
-  const ListedBy({super.key});
+  final String? name;
+  const ListedBy({
+    super.key,
+    this.name,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +18,7 @@ class ListedBy extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              "Listed By A Nigga".toUpperCase(),
+              "Listed By $name".toUpperCase(),
               style: TextStyle(color: Colors.green),
             ),
             IconButton(onPressed: () {}, icon: Icon(Icons.more_horiz))

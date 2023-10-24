@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/realtorButton.dart';
 
 class SubHero extends StatelessWidget {
-  const SubHero({super.key});
+  final PropertyController controller;
+  const SubHero({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +53,7 @@ class SubHero extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "Favorite",
+                  "Share",
                   style: TextStyle(color: Colors.black),
                 ),
               ],

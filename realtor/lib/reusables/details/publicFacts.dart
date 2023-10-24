@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/details/detailRow.dart';
 import 'package:realtor/reusables/details/hearder.dart';
 
 class PublicFacts extends StatelessWidget {
-  const PublicFacts({super.key});
+  final PropertyController controller;
+  const PublicFacts({
+    super.key,
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -15,15 +20,15 @@ class PublicFacts extends StatelessWidget {
         ),
         DetailsRow(
           label: "Beds",
-          value: "3.0",
+          value: controller.singleHouse[0].beds.toString(),
         ),
         DetailsRow(
           label: "Baths",
-          value: "2.0",
+          value: controller.singleHouse[0].baths.toString(),
         ),
         DetailsRow(
           label: "Sq.ft.",
-          value: "-",
+          value: controller.singleHouse[0].sqft.toString(),
         ),
         DetailsRow(
           label: "Floors",
@@ -31,15 +36,15 @@ class PublicFacts extends StatelessWidget {
         ),
         DetailsRow(
           label: "Lot Size",
-          value: "-",
+          value: controller.singleHouse[0].lot.toString(),
         ),
         DetailsRow(
           label: "Style",
-          value: "-",
+          value: controller.singleHouse[0].style,
         ),
         DetailsRow(
           label: "Year Built",
-          value: "-",
+          value: controller.singleHouse[0].style,
         ),
         DetailsRow(
           label: "Year Renovated",
@@ -47,7 +52,7 @@ class PublicFacts extends StatelessWidget {
         ),
         DetailsRow(
           label: "City",
-          value: "K'la",
+          value: controller.singleHouse[0].city,
         ),
         DetailsRow(
           label: "APN",

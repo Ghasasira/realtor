@@ -22,14 +22,14 @@ class MarketingHomes extends StatelessWidget {
             TextSpan(
               text: "Get better results for lower fees when you",
               style: TextStyle(
-                fontSize: 18.0,
-              ),
+                  //fontSize: 18.0,
+                  ),
             ),
             TextSpan(
-                text: "\n sell with a local Realtor Agent",
+                text: "\nsell with a local Realtor Agent",
                 style: TextStyle(
                   color: Colors.blue,
-                  fontSize: 18.0,
+                  //fontSize: 18.0,
                 ))
           ]),
         ),
@@ -37,15 +37,19 @@ class MarketingHomes extends StatelessWidget {
           children: [
             AdBarner(
               text: "Pro Photos",
+              image: "images/proPhotos.jpeg",
             ),
             AdBarner(
               text: "Yard Sign",
+              image: "images/yardSign.jpeg",
             ),
             AdBarner(
               text: "Listing Flyer",
+              image: "images/listingFlyer.jpeg",
             ),
             AdBarner(
               text: "MLS Listing",
+              image: "images/mlsListing.jpeg",
             ),
           ],
         ),
@@ -56,8 +60,10 @@ class MarketingHomes extends StatelessWidget {
 
 class AdBarner extends StatelessWidget {
   final String? text;
+  final String? image;
   AdBarner({
     this.text,
+    this.image,
     super.key,
   });
 
@@ -69,16 +75,21 @@ class AdBarner extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              text!,
-              style: TextStyle(
-                fontSize: 18.0,
+            Padding(
+              padding: const EdgeInsets.only(bottom: 5.0),
+              child: Text(
+                text!,
+                style: TextStyle(
+                    //fontSize: 18.0,
+                    ),
               ),
             ),
             Container(
+              decoration: BoxDecoration(),
               height: 100.0,
               width: MediaQuery.of(context).size.width * 0.41,
-              color: Colors.amber,
+              //color: Colors.amber,
+              child: Image.asset(image!, fit: BoxFit.cover),
             ),
           ],
         ),

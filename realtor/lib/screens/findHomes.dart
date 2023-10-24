@@ -63,7 +63,7 @@ class FindHomes extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 10.0),
                       child: SizedBox(
-                        width: 120.0,
+                        width: 150.0,
                         child: RealtorButton(
                           color: Colors.red,
                           text: "Save Search",

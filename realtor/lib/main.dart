@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/home.dart';
 import 'package:realtor/screens/Favorite/favorite.dart';
 import 'package:realtor/screens/feed/feed.dart';
@@ -15,10 +16,12 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  //final PropertyController propertyController = PropertyController();
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final PropertyController propertyController = PropertyController();
+    Get.put(propertyController);
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       //theme:,
@@ -26,19 +29,19 @@ class MyApp extends StatelessWidget {
           fontFamily: "Montserrat",
           textTheme: TextTheme(
             bodySmall: TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
             bodyMedium: TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
             bodyLarge: TextStyle(
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w500,
               color: Colors.black,
             ),
           )),
-      home: Home(),
+      home: const Home(),
     );
   }
 }

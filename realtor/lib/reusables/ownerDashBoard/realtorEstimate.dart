@@ -20,7 +20,6 @@ class RealtorEstimate extends StatelessWidget {
           ),
           child: Text(
             "This Estimate is just a starting point and based on what we currently know about your home and nearby market",
-            style: TextStyle(fontSize: 18.0),
           ),
         ),
         Padding(
@@ -30,7 +29,6 @@ class RealtorEstimate extends StatelessWidget {
           ),
           child: Text(
             "Unfortunately, we don't have enough data to generate an accurate Estimate at this time",
-            style: TextStyle(fontSize: 18.0),
           ),
         ),
       ],
@@ -59,7 +57,6 @@ class SliderData extends StatelessWidget {
             title!,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontSize: 18.0,
             ),
           ),
           Container(
@@ -75,7 +72,6 @@ class SliderData extends StatelessWidget {
                 "\$ $score",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 16.0,
                 ),
               ),
             ),
@@ -143,7 +139,7 @@ class Proceeds extends StatelessWidget {
                       "Talk to Realtor Agent About Selling Your Home",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20,
+                        fontSize: 16,
                       ),
                     ),
                     SizedBox(

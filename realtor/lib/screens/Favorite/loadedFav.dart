@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/details/favs/filter.dart';
 import 'package:realtor/reusables/details/favs/sort.dart';
 import 'package:realtor/reusables/filterbutton.dart';
@@ -9,7 +10,8 @@ import 'package:realtor/reusables/propertyCard.dart';
 import 'package:realtor/screens/myShortList.dart';
 
 class LoadedFav extends StatelessWidget {
-  const LoadedFav({super.key});
+  LoadedFav({super.key});
+  PropertyController propertyController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +121,7 @@ class LoadedFav extends StatelessWidget {
                   ],
                 ),
               ),
-              Text("12 Results"),
+              Text("${propertyController.favorites.length} Results"),
             ],
           ),
         ),
@@ -127,12 +129,24 @@ class LoadedFav extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: ListView.builder(
             //physics: NeverScrollableScrollPhysics(),
-            itemCount: 12,
+            itemCount: propertyController.favorites.length,
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 10.0),
                 child: PropertyCard(
-                  bottom: ListedBy(),
+                  bottom: ListedBy(
+                    name: propertyController.favorites[index].listedBy,
+                  ),
+                  status: propertyController.favorites[index].status,
+                  price: propertyController.favorites[index].price,
+                  beds: propertyController.favorites[index].beds,
+                  baths: propertyController.favorites[index].baths,
+                  sqft: propertyController.favorites[index].sqft,
+                  street: propertyController.favorites[index].street,
+                  city: propertyController.favorites[index].city,
+                  state: propertyController.favorites[index].state,
+                  listedBy: propertyController.favorites[index].listedBy,
+                  id: propertyController.favorites[index].id,
                 ),
               );
             },

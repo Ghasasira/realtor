@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/details/detailRow.dart';
 import 'package:realtor/reusables/details/hearder.dart';
 
 class KeyDetails extends StatelessWidget {
-  const KeyDetails({super.key});
+  final PropertyController controller;
+  const KeyDetails({super.key, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +28,17 @@ class KeyDetails extends StatelessWidget {
                 ),
               ),
               DetailsRow(
-                label: "List Price",
-                value: "-",
+                label: "Price",
+                value: "\$ ${controller.singleHouse[0].price.toString()}",
               ),
               DetailsRow(
                 label: "Redfin Estimate",
                 value: "-",
               ),
               DetailsRow(
-                label: "Price/Sq.Ft.",
-                value: "-/Sq.Ft.",
-              ),
+                  label: "Price/Sq.Ft.",
+                  value:
+                      "\$ ${(controller.singleHouse[0].price / controller.singleHouse[0].sqft).toStringAsFixed(2)} per Sq.Ft."),
             ]),
           ),
         ),
@@ -58,15 +60,15 @@ class KeyDetails extends StatelessWidget {
               ),
               DetailsRow(
                 label: "Style",
-                value: "-",
+                value: controller.singleHouse[0].style,
               ),
               DetailsRow(
                 label: "City",
-                value: "K'la",
+                value: controller.singleHouse[0].city,
               ),
               DetailsRow(
                 label: "State",
-                value: "Central",
+                value: controller.singleHouse[0].state,
               ),
               DetailsRow(
                 label: "MLS#",

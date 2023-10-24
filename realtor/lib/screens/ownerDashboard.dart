@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
+import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
+//import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
 import 'package:realtor/reusables/ownerDashBoard/homeOwnerTools.dart';
 import 'package:realtor/reusables/ownerDashBoard/homeworth.dart';
 import 'package:realtor/reusables/ownerDashBoard/manageYourHome.dart';
@@ -12,17 +14,19 @@ import 'package:realtor/reusables/ownerDashBoard/topArea.dart';
 import 'package:realtor/reusables/realtorButton.dart';
 
 class OwnerDashboard extends StatelessWidget {
-  const OwnerDashboard({super.key});
+  final int id;
+  OwnerDashboard({super.key, required this.id});
+  PropertyController propertyController = Get.find();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text(
+        title: const Text(
           "Owner Dashboard",
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 20,
             color: Colors.black,
           ),
         ),
@@ -30,7 +34,7 @@ class OwnerDashboard extends StatelessWidget {
           onPressed: () {
             Navigator.pop(context);
           },
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back_ios_new,
             color: Colors.black,
           ),
@@ -40,19 +44,28 @@ class OwnerDashboard extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: ListView(
           children: [
-            Text(
+            const Text(
               "Welcome Back, Ghus!",
               style: TextStyle(
-                fontSize: 26,
+                fontSize: 18,
                 color: Colors.black,
               ),
             ),
             //
-            TopArea(),
-            DashDiv(),
-            OwnerHeader(
-              text:
-                  "Sell your home for more, pay a 1% listing fee when you sell and buy",
+            TopArea(
+              controller: propertyController,
+            ),
+            const DashDiv(),
+            const Text(
+              "Sell your home for more, pay a 1% listing fee when you sell and buy",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 10.0,
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -60,46 +73,52 @@ class OwnerDashboard extends StatelessWidget {
                 text: "Schedule Selling Consultation",
                 color: Colors.red,
                 onpressed: () {},
-                styles: TextStyle(
+                styles: const TextStyle(
                   color: Colors.white,
                 ),
               ),
             ),
-            Divider(
+            const Divider(
               color: Colors.black,
               thickness: 1.0,
             ),
             //DashDiv(),
-            Text("Or, talk to a Realtor Agent about your home's value."),
-            SizedBox(
+            const Text("Or, talk to a Realtor Agent about your home's value."),
+            const SizedBox(
               height: 10.0,
             ),
             GestureDetector(
                 onTap: () {},
-                child: Text(
+                child: const Text(
                   "Request a free analysis",
                   style: TextStyle(
                     color: Colors.blue,
                   ),
                 )),
-            DashDiv(),
-            RealtorEstimate(),
-            HomeWorth(),
-            OwnerTools(),
-            DashDiv(),
-            MarketTrends(),
-            DashDiv(),
-            MarketingHomes(),
-            DashDiv(),
-            RecentlyListed(),
-            RecentlySold(),
-            ManageYourHome(),
+            const DashDiv(),
+            const RealtorEstimate(),
+            const Padding(
+              padding: EdgeInsets.only(
+                top: 20.0,
+                bottom: 20.0,
+              ),
+              child: HomeWorth(),
+            ),
+            const OwnerTools(),
+            const DashDiv(),
+            const MarketTrends(),
+            const DashDiv(),
+            const MarketingHomes(),
+            const DashDiv(),
+            const RecentlyListed(),
+            const RecentlySold(),
+            const ManageYourHome(),
 
             //
-            SizedBox(height: 30),
-            Text(
+            const SizedBox(height: 30),
+            const Text(
               "Address",
-              style: TextStyle(fontSize: 22),
+              style: TextStyle(fontSize: 18),
             ),
             SizedBox(
               width: MediaQuery.of(context).size.width,
@@ -107,7 +126,7 @@ class OwnerDashboard extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(10.0),
-                    borderSide: BorderSide(
+                    borderSide: const BorderSide(
                       color: Colors.black,
                     ),
                   ),
@@ -118,12 +137,12 @@ class OwnerDashboard extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               child: RealtorButton(
                 text: "Claim Another Home",
-                color: Color.fromARGB(255, 218, 214, 214),
+                color: const Color.fromARGB(255, 218, 214, 214),
                 onpressed: () {},
-                styles: TextStyle(
+                styles: const TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
+                  fontSize: 16.0,
                 ),
               ),
             )
@@ -141,8 +160,8 @@ class DashDiv extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
+    return const Padding(
+      padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
       child: Divider(
         color: Colors.black,
         thickness: 2.0,

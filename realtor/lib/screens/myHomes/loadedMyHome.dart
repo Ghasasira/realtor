@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
 import 'package:realtor/reusables/propertyCard.dart';
 import 'package:realtor/screens/ownerDashboard.dart';
 
 class LoadedMyHome extends StatelessWidget {
-  const LoadedMyHome({super.key});
-
+  LoadedMyHome({super.key});
+  PropertyController propertyController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +20,7 @@ class LoadedMyHome extends StatelessWidget {
               10.0,
             ),
             child: Text(
-              "3 Homes",
+              "${propertyController.myProperty.length} Homes",
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 18.0,
@@ -36,8 +38,20 @@ class LoadedMyHome extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.only(bottom: 10.0),
                   child: PropertyCard(
-                    page: OwnerDashboard(),
-                    bottom: ListedBy(),
+                    page: "ownerDashboard",
+                    bottom: ListedBy(
+                      name: propertyController.myProperty[index].listedBy,
+                    ),
+                    status: propertyController.myProperty[index].status,
+                    price: propertyController.myProperty[index].price,
+                    beds: propertyController.myProperty[index].beds,
+                    baths: propertyController.myProperty[index].baths,
+                    sqft: propertyController.myProperty[index].sqft,
+                    street: propertyController.myProperty[index].street,
+                    city: propertyController.myProperty[index].city,
+                    state: propertyController.myProperty[index].state,
+                    listedBy: propertyController.myProperty[index].listedBy,
+                    id: propertyController.myProperty[index].id,
                   ),
                 );
               },
