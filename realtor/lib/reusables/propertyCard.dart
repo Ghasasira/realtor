@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:realtor/controllers/propertyController.dart';
+import 'package:realtor/controllers/schools.dart';
 import 'package:realtor/reusables/lowerCardSection.dart';
 import 'package:realtor/screens/ownerDashboard.dart';
 import 'package:realtor/screens/propertyDetails.dart';
@@ -35,11 +36,14 @@ class PropertyCard extends StatelessWidget {
   });
 
   PropertyController propertyController = Get.find();
+  final SchoolController schoolController = SchoolController();
+  //Get.put(SchoolController);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         int idNo = id!;
+        schoolController.getNearbySchools(0.1223, -37.233, 5000);
         //propertyController.fetchSingleItem(idNo);
         if (page == "ownerDashboard") {
           propertyController.fetchSingleMyHomeItem(idNo);
