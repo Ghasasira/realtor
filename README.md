@@ -66,8 +66,8 @@ This project is licensed under the MIT License.
 
 If you have any questions or feedback, please feel free to contact the project maintainers:
 
-- Your Name:Gasasira Joshua
-- Your Email: gasasiraj013@gmail.com
+- Gasasira Joshua
+- gasasiraj013@gmail.com
 - Project Repository: [GitHub Repository](https://github.com/Ghasasira/realtor)
 
 Thank you for using Realtor! We hope it makes the process of finding and buying properties as smooth as possible for your users.
