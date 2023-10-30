@@ -1,3 +1,5 @@
+//import 'package:flutter/rendering.dart';
+
 class House {
   final double? price;
   final double? beds;
@@ -16,6 +18,7 @@ class House {
   final String? open;
   final List? images;
   final int id;
+  final bool? fav;
 
   House({
     required this.id,
@@ -35,5 +38,6 @@ class House {
     this.status,
     this.street,
     this.style,
+    this.fav,
   });
 }

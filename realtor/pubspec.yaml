@@ -43,6 +43,9 @@ dependencies:
   google_maps_flutter: ^2.5.0
   flutter_google_places: ^0.3.0
   http: ^0.13.6
+  carousel_slider: ^4.2.1
+  flutter_carousel_widget: ^2.1.2
+  favorite_button: ^0.0.4
 
 dev_dependencies:
   flutter_test:

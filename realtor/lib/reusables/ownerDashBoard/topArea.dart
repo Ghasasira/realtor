@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/reusables/ownerDashBoard/headerText.dart';
@@ -23,10 +24,35 @@ class TopArea extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                height: 120.0,
-                width: MediaQuery.of(context).size.width * 0.3,
-                color: Colors.blue,
+              Stack(
+                children: [
+                  SizedBox(
+                    height: 120.0,
+                    width: MediaQuery.of(context).size.width * 0.3,
+                    //color: Colors.blue,
+                    child: Image.asset(
+                      "images/background.jpg",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  CachedNetworkImage(
+                    imageUrl: controller.singleMyHouse[0].images[0],
+                    imageBuilder: (context, imageProvider) => Container(
+                      height: 120.0,
+                      width: MediaQuery.of(context).size.width * 0.3,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: imageProvider,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    placeholder: (context, url) =>
+                        const Center(child: CircularProgressIndicator()),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                  ),
+                ],
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 0.6,

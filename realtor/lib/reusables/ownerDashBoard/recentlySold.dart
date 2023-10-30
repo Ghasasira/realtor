@@ -29,6 +29,8 @@ class RecentlySold extends StatelessWidget {
                   itemCount: 2,
                   itemBuilder: (context, index) {
                     return PropertyCard(
+                      fav: false,
+                      images: [" "],
                       bottom: ListedBy(),
                     );
                   })),

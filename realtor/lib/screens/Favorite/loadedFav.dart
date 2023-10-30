@@ -137,6 +137,7 @@ class LoadedFav extends StatelessWidget {
                   bottom: ListedBy(
                     name: propertyController.favorites[index].listedBy,
                   ),
+                  fav: propertyController.favorites[index].fav,
                   status: propertyController.favorites[index].status,
                   price: propertyController.favorites[index].price,
                   beds: propertyController.favorites[index].beds,
@@ -147,6 +148,7 @@ class LoadedFav extends StatelessWidget {
                   state: propertyController.favorites[index].state,
                   listedBy: propertyController.favorites[index].listedBy,
                   id: propertyController.favorites[index].id,
+                  images: propertyController.favorites[index].images!,
                 ),
               );
             },

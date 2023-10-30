@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/home.dart';
 import 'package:realtor/reusables/realtorButton.dart';
+import 'package:realtor/screens/feed/feed.dart';
 
 class EmptyFav extends StatelessWidget {
   const EmptyFav({super.key});

@@ -14,6 +14,7 @@ class SearchMyHome extends StatelessWidget {
             color: Colors.black,
           ),
           onPressed: () {
+            FocusScope.of(context).requestFocus(FocusNode());
             Navigator.pop(context);
           },
         ),

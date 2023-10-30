@@ -13,11 +13,14 @@ class PropertyController extends GetxController {
   RxList<House> myShortList = <House>[].obs;
   RxList singleHouse = [].obs;
   RxList singleMyHouse = [].obs;
+  RxList filteredFeedProperty = <House>[].obs;
+  RxList searchResults = [].obs;
 
   @override
   void onInit() {
     fetchProducts();
     fetchMyProducts();
+    filterAll();
     // TODO: implement onInit
     super.onInit();
   }
@@ -29,6 +32,7 @@ class PropertyController extends GetxController {
       for (var prop in all) {
         House house = House(
           id: prop["id"],
+          fav: prop["fav"],
           price: prop["price"],
           beds: prop["beds"],
           baths: prop["baths"],
@@ -77,6 +81,7 @@ class PropertyController extends GetxController {
           status: prop["status"],
           open: prop["open"],
           images: prop["images"],
+          fav: prop["fav"],
         );
         myProperties.add(house);
       }
@@ -91,10 +96,8 @@ class PropertyController extends GetxController {
       singleHouse.clear();
       final item = allProperty.firstWhere((element) => element.id == id);
       singleHouse.add(item);
-      print(singleHouse[0].id);
     } catch (e) {
       print(e.toString());
-      print('failed');
     }
     //print(singleHouse[0].id);
   }
@@ -119,6 +122,43 @@ class PropertyController extends GetxController {
       print(e.toString());
       //print('failed');
     }
-    //print(singleHouse[0].id);
+  }
+
+  void filterAll() {
+    filteredFeedProperty.clear();
+    filteredFeedProperty = allProperty;
+    print(filteredFeedProperty.length);
+  }
+
+  void filterFavs() {
+    try {
+      filteredFeedProperty.clear();
+      final items = allProperty.where((element) => element.fav == true);
+      filteredFeedProperty.addAll(items);
+      print(filteredFeedProperty.length);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  void filterStatus(tag) {
+    try {
+      filteredFeedProperty.clear();
+      final items = allProperty.where((element) => element.status == tag);
+      filteredFeedProperty.addAll(items);
+      print(filteredFeedProperty.length);
+    } catch (e) {
+      print(e.toString());
+    }
+  }
+
+  void search(String query) {
+    // Replace this with your actual search logic.
+    List results = allProperty
+        .where((item) =>
+            item.street?.toLowerCase().contains(query!.toLowerCase()) ?? false)
+        .toList();
+    searchResults.addAll(results);
+    //results;
   }
 }

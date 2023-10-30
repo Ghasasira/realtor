@@ -39,6 +39,8 @@ class ManageYourHome extends StatelessWidget {
                   itemCount: 2,
                   itemBuilder: (context, index) {
                     return PropertyCard(
+                      fav: true,
+                      images: [],
                       bottom: ListedBy(),
                       //page: OwnerDashboard(),
                     );

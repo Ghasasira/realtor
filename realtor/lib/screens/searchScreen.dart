@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:realtor/controllers/propertyController.dart';
 
 class SearchScreen extends StatefulWidget {
   SearchScreen({super.key});
@@ -14,6 +16,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -27,6 +30,9 @@ class _SearchScreenState extends State<SearchScreen> {
           },
         ),
         title: TextField(
+          onChanged: (query) {
+            propertyController.search(query);
+          },
           autofocus: true,
           decoration: InputDecoration(
             border: InputBorder.none,
@@ -69,21 +75,30 @@ class _SearchScreenState extends State<SearchScreen> {
                           ),
                           color: isSelected ? Colors.white : null,
                         ),
-                        child: Center(child: Text("For Sale")),
+                        child: Center(child: Text(choice)),
                       ),
                     );
                   }).toList(),
                 ),
               ),
               Flexible(
-                child: Column(
-                  children: [
-                    Text('house 1'),
-                    Text('house 2'),
-                    Text('house 3'),
-                    Text('house 4'),
-                  ],
-                ),
+                child: Obx(() {
+                  if (propertyController.searchResults.isEmpty) {
+                    return Text("No results");
+                  } else {
+                    return Expanded(
+                      child: ListView.builder(
+                        itemCount: propertyController.searchResults.length,
+                        itemBuilder: (context, index) {
+                          return ListTile(
+                            title: Text(
+                                propertyController.searchResults[index].street),
+                          );
+                        },
+                      ),
+                    );
+                  }
+                }),
               ),
             ],
           ),

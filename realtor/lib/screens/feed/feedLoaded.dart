@@ -12,49 +12,63 @@ class FeedLoaded extends StatelessWidget {
   Widget build(BuildContext context) {
     PropertyController propertyController = Get.find();
     return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TopSortBar(),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
-            child: Text(
-              "Updates",
-              //textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+      child: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TopSortBar(),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0, bottom: 8.0),
+              child: Text(
+                "Updates",
+                //textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
             ),
-          ),
-          //PropertyCard(),
+            //PropertyCard(),
 
-          // height: MediaQuery.of(context).size.height,
-          Container(
-            height: MediaQuery.of(context).size.height,
-            child: ListView.builder(
-              itemCount: propertyController.allProperty.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 10.0),
-                  child: PropertyCard(
-                    bottom: const Recommended(),
-                    status: propertyController.allProperty[index].status,
-                    price: propertyController.allProperty[index].price,
-                    beds: propertyController.allProperty[index].beds,
-                    baths: propertyController.allProperty[index].baths,
-                    sqft: propertyController.allProperty[index].sqft,
-                    street: propertyController.allProperty[index].street,
-                    city: propertyController.allProperty[index].city,
-                    state: propertyController.allProperty[index].state,
-                    listedBy: propertyController.allProperty[index].listedBy,
-                    id: propertyController.allProperty[index].id,
-                  ),
-                );
-              },
+            // height: MediaQuery.of(context).size.height,
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.75,
+              child: ListView.builder(
+                itemCount: propertyController.filteredFeedProperty.length,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 10.0),
+                    child: PropertyCard(
+                        bottom: const Recommended(),
+                        fav: propertyController.filteredFeedProperty[index].fav,
+                        status: propertyController
+                            .filteredFeedProperty[index].status,
+                        price: propertyController
+                            .filteredFeedProperty[index].price,
+                        beds:
+                            propertyController.filteredFeedProperty[index].beds,
+                        baths: propertyController
+                            .filteredFeedProperty[index].baths,
+                        sqft:
+                            propertyController.filteredFeedProperty[index].sqft,
+                        street: propertyController
+                            .filteredFeedProperty[index].street,
+                        city:
+                            propertyController.filteredFeedProperty[index].city,
+                        state: propertyController
+                            .filteredFeedProperty[index].state,
+                        listedBy: propertyController
+                            .filteredFeedProperty[index].listedBy,
+                        id: propertyController.filteredFeedProperty[index].id,
+                        images: propertyController
+                            .filteredFeedProperty[index].images!),
+                  );
+                },
+              ),
             ),
-          ),
-          Container(
-            height: 300.0,
-          ),
-        ],
+            // SizedBox(
+            //   height: 400.0,
+            // ),
+          ],
+        ),
       ),
     );
   }
@@ -85,6 +99,7 @@ class _TopSortBarState extends State<TopSortBar> {
 
   @override
   Widget build(BuildContext context) {
+    PropertyController propertyController = Get.find();
     return Container(
       height: 50.0,
       child: ListView(
@@ -95,6 +110,11 @@ class _TopSortBarState extends State<TopSortBar> {
             onTap: () {
               setState(() {
                 selected = tag;
+                selected == "All"
+                    ? propertyController.filterAll()
+                    : selected == "Favorites"
+                        ? propertyController.filterFavs()
+                        : propertyController.filterStatus(selected);
               });
             },
             child: Padding(

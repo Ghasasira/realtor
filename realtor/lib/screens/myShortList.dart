@@ -39,6 +39,7 @@ class MyShortlist extends StatelessWidget {
                         return Padding(
                           padding: const EdgeInsets.only(bottom: 10.0),
                           child: PropertyCard(
+                            images: [], fav: true,
                             //page: OwnerDashboard(),
                             bottom: ListedBy(),
                           ),

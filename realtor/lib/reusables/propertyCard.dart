@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:favorite_button/favorite_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:realtor/controllers/propertyController.dart';
@@ -19,6 +21,8 @@ class PropertyCard extends StatelessWidget {
   final String? status;
   final int? id;
   final String? listedBy;
+  final List images;
+  final bool? fav;
   PropertyCard({
     super.key,
     this.bottom,
@@ -33,6 +37,8 @@ class PropertyCard extends StatelessWidget {
     this.status,
     this.street,
     this.id,
+    required this.images,
+    this.fav,
   });
 
   PropertyController propertyController = Get.find();
@@ -59,10 +65,42 @@ class PropertyCard extends StatelessWidget {
           children: [
             Stack(
               children: [
-                Container(
+                SizedBox(
                   height: 250.0,
                   width: MediaQuery.of(context).size.width,
-                  color: Colors.amber,
+                  child: Stack(
+                    children: [
+                      SizedBox(
+                        height: 250.0,
+                        width: MediaQuery.of(context).size.width,
+                        child: Image.asset(
+                          "images/background.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      CachedNetworkImage(
+                        imageUrl: images[0],
+                        imageBuilder: (context, imageProvider) => Container(
+                          height: 250.0,
+                          width: MediaQuery.of(context).size.width,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: imageProvider,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        placeholder: (context, url) =>
+                            const Center(child: CircularProgressIndicator()),
+                        errorWidget: (context, url, error) =>
+                            const Icon(Icons.error),
+                      ),
+                      // Image.network(
+                      //   images[0],
+                      //   fit: BoxFit.fill,
+                      // ),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 10.0, left: 8.0),
@@ -133,13 +171,25 @@ class PropertyCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      IconButton(
+                      //FavoriteButton(valueChanged: valueChanged)
+                      FavoriteButton(
+                        isFavorite: fav,
+                        iconSize: 40.0,
+                        // iconDisabledColor: Colors.white,
+                        valueChanged: (_) {
+                          int propId = id!;
+                          propertyController.addToFav(propId);
+                          print(fav);
+                        },
+                      ),
+
+                      /*IconButton(
                         onPressed: () {
                           int propId = id!;
                           propertyController.addToFav(propId);
                         },
                         icon: Icon(Icons.favorite_border_outlined),
-                      ),
+                      ),*/
                       IconButton(
                         onPressed: () {},
                         icon: Icon(Icons.share_outlined),

@@ -52,6 +52,8 @@ class LoadedMyHome extends StatelessWidget {
                     state: propertyController.myProperty[index].state,
                     listedBy: propertyController.myProperty[index].listedBy,
                     id: propertyController.myProperty[index].id,
+                    images: propertyController.myProperty[index].images!,
+                    fav: propertyController.myProperty[index].fav,
                   ),
                 );
               },

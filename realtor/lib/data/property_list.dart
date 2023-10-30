@@ -1,6 +1,7 @@
 List all = [
   {
     "id": 1,
+    "fav": false,
     "price": 250000.0,
     'beds': 3.0,
     'baths': 2.5,
@@ -16,13 +17,18 @@ List all = [
     'built': "2005",
     "status": "For Sale",
     "open": "Open House on 10/20/2023",
-    "images": ["image1.jpg", "image2.jpg"],
+    "images": [
+      "https://www.livehome3d.com/assets/img/social/how-to-design-a-house.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-98v8uFxE3GeIYJE6X5DG1wgu-vKgk8V__Q&usqp=CAU",
+      "https://th.bing.com/th/id/R.65f90aeccf6e28eeb9a31c71fcd6d70f?rik=YUWx%2f4LbKGrsKw&pid=ImgRaw&r=0",
+    ],
   },
   {
     "id": 2,
     "price": 320000.0,
     'beds': 4.0,
     'baths': 3.0,
+    "fav": false,
     'sqft': 2500.0,
     'agentCommision': 16000.0,
     'lot': 0.3,
@@ -35,7 +41,10 @@ List all = [
     'built': "1998",
     "status": "Pending",
     "open": "N/A",
-    "images": ["image3.jpg", "image4.jpg"],
+    "images": [
+      "https://th.bing.com/th/id/R.65f90aeccf6e28eeb9a31c71fcd6d70f?rik=YUWx%2f4LbKGrsKw&pid=ImgRaw&r=0",
+      "image4.jpg"
+    ],
   },
   {
     "id": 3,
@@ -43,6 +52,7 @@ List all = [
     'beds': 2.0,
     'baths': 1.0,
     'sqft': 1200.0,
+    "fav": false,
     'agentCommision': 8750.0,
     'lot': 0.2,
     'location': ["Latitude 41.8781", "Longitude -87.6298"],
@@ -54,7 +64,10 @@ List all = [
     'built': "1970",
     "status": "Sold",
     "open": "N/A",
-    "images": ["image5.jpg", "image6.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIlMLpazAcDb8DZyIugZBlbSpKemc-gl8pkA&usqp=CAU",
+      "image6.jpg"
+    ],
   },
   {
     "id": 4,
@@ -62,6 +75,7 @@ List all = [
     'beds': 3.5,
     'baths': 2.0,
     'sqft': 1800.0,
+    "fav": true,
     'agentCommision': 14500.0,
     'lot': 0.27,
     'location': ["Latitude 33.4484", "Longitude -112.0740"],
@@ -73,13 +87,17 @@ List all = [
     'built': "2010",
     "status": "For Sale",
     "open": "Open House on 10/25/2023",
-    "images": ["image7.jpg", "image8.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-98v8uFxE3GeIYJE6X5DG1wgu-vKgk8V__Q&usqp=CAU",
+      "image8.jpg"
+    ],
   },
   {
     "id": 5,
     "price": 210000.0,
     'beds': 2.5,
     'baths': 2.0,
+    "fav": false,
     'sqft': 1600.0,
     'agentCommision': 10500.0,
     'lot': 0.22,
@@ -92,13 +110,17 @@ List all = [
     'built': "1985",
     "status": "For Sale",
     "open": "Open House on 10/22/2023",
-    "images": ["image9.jpg", "image10.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW0U47yNq6Wl87SFcR7bf5X7NJ-qThQQquqA&usqp=CAU",
+      "image10.jpg"
+    ],
   },
   {
     "id": 6,
     "price": 185000.0,
     'beds': 2.0,
     'baths': 1.5,
+    "fav": true,
     'sqft': 1400.0,
     'agentCommision': 9250.0,
     'lot': 0.2,
@@ -111,7 +133,10 @@ List all = [
     'built': "1965",
     "status": "For Sale",
     "open": "Open House on 10/24/2023",
-    "images": ["image11.jpg", "image12.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsirIW-ieL0WVNKtWANaqHJv0Kk1lTZ47nPA&usqp=CAU",
+      "image12.jpg"
+    ],
   },
   {
     "id": 7,
@@ -119,6 +144,7 @@ List all = [
     'beds': 3.0,
     'baths': 2.0,
     'sqft': 1900.0,
+    "fav": true,
     'agentCommision': 13000.0,
     'lot': 0.26,
     'location': ["Latitude 32.7157", "Longitude -117.1611"],
@@ -130,7 +156,10 @@ List all = [
     'built': "2000",
     "status": "For Sale",
     "open": "Open House on 10/26/2023",
-    "images": ["image13.jpg", "image14.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3i1jpJLXqxV-RpdvAe0yT2l-NdXgpq8UBCQ&usqp=CAU",
+      "image14.jpg"
+    ],
   },
   {
     "id": 8,
@@ -138,6 +167,7 @@ List all = [
     'beds': 4.0,
     'baths': 3.5,
     'sqft': 2200.0,
+    "fav": true,
     'agentCommision': 15000.0,
     'lot': 0.3,
     'location': ["Latitude 37.7749", "Longitude -122.4194"],
@@ -149,7 +179,10 @@ List all = [
     'built': "2008",
     "status": "For Sale",
     "open": "Open House on 10/27/2023",
-    "images": ["image15.jpg", "image16.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYPfPoclmhyZa3CXww6B1O6huoFITKbEGQmg&usqp=CAU",
+      "image16.jpg"
+    ],
   },
   {
     "id": 9,
@@ -157,6 +190,7 @@ List all = [
     'beds': 3.0,
     'baths': 2.0,
     'sqft': 1700.0,
+    "fav": true,
     'agentCommision': 12000.0,
     'lot': 0.24,
     'location': ["Latitude 42.3601", "Longitude -71.0589"],
@@ -168,13 +202,17 @@ List all = [
     'built': "1995",
     "status": "For Sale",
     "open": "Open House on 10/28/2023",
-    "images": ["image17.jpg", "image18.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_r5FYN6FDBnHRV5n9RUiDDthGkeNv3mBT5CHhujk9qzZJCz0H26wiM2sWBmpyhvgOwXc&usqp=CAU",
+      "image18.jpg"
+    ],
   },
   {
     "id": 10,
     "price": 280000.0,
     'beds': 4.0,
     'baths': 2.5,
+    "fav": false,
     'sqft': 2100.0,
     'agentCommision': 14000.0,
     'lot': 0.28,
@@ -187,7 +225,10 @@ List all = [
     'built': "1995",
     "status": "For Sale",
     "open": "Open House on 10/28/2023",
-    "images": ["image17.jpg", "image18.jpg"],
+    "images": [
+      "https://www.livehome3d.com/assets/img/social/how-to-design-a-house.jpg",
+      "image18.jpg"
+    ],
   }
 ];
 
@@ -197,6 +238,7 @@ List myProps = [
     "price": 300000.0,
     'beds': 4.0,
     'baths': 3.5,
+    "fav": false,
     'sqft': 2200.0,
     'agentCommision': 15000.0,
     'lot': 0.3,
@@ -209,7 +251,10 @@ List myProps = [
     'built': "2008",
     "status": "For Sale",
     "open": "Open House on 10/27/2023",
-    "images": ["image15.jpg", "image16.jpg"],
+    "images": [
+      "https://www.livehome3d.com/assets/img/social/how-to-design-a-house.jpg",
+      "image16.jpg"
+    ],
   },
   {
     "id": 9,
@@ -218,6 +263,7 @@ List myProps = [
     'baths': 2.0,
     'sqft': 1700.0,
     'agentCommision': 12000.0,
+    "fav": true,
     'lot': 0.24,
     'location': ["Latitude 42.3601", "Longitude -71.0589"],
     'listedBy': "Robert Miller",
@@ -228,11 +274,15 @@ List myProps = [
     'built': "1995",
     "status": "For Sale",
     "open": "Open House on 10/28/2023",
-    "images": ["image17.jpg", "image18.jpg"],
+    "images": [
+      "https://www.livehome3d.com/assets/img/social/how-to-design-a-house.jpg",
+      "image 34"
+    ],
   },
   {
     "id": 10,
     "price": 280000.0,
+    "fav": true,
     'beds': 4.0,
     'baths': 2.5,
     'sqft': 2100.0,
@@ -247,6 +297,9 @@ List myProps = [
     'built': "1995",
     "status": "For Sale",
     "open": "Open House on 10/28/2023",
-    "images": ["image17.jpg", "image18.jpg"],
+    "images": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-98v8uFxE3GeIYJE6X5DG1wgu-vKgk8V__Q&usqp=CAU",
+      "image18.jpg"
+    ],
   }
 ];

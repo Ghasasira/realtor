@@ -84,8 +84,7 @@ class AdBarner extends StatelessWidget {
                     ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(),
+            SizedBox(
               height: 100.0,
               width: MediaQuery.of(context).size.width * 0.41,
               //color: Colors.amber,

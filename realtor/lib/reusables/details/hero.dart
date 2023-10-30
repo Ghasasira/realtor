@@ -1,4 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
+//import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:get/get.dart';
 import 'package:realtor/controllers/propertyController.dart';
 
@@ -11,10 +14,41 @@ class HeroSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
+        SizedBox(
           height: 300,
           width: MediaQuery.of(context).size.width,
-          color: Colors.amber,
+          child: Stack(children: [
+            SizedBox(
+              height: 300.0,
+              width: MediaQuery.of(context).size.width,
+              child: Image.asset(
+                "images/background.jpg",
+                fit: BoxFit.cover,
+              ),
+            ),
+            ImageSlider(
+              all_images: [
+                controller.singleHouse[0].images[0],
+                controller.singleHouse[0].images[1],
+              ],
+              //image: controller.singleHouse[0].images[0],
+            )
+
+            // CachedNetworkImage(
+            //   imageUrl: controller.singleHouse[0].images[0],
+            //   imageBuilder: (context, imageProvider) => Container(
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //         image: imageProvider,
+            //         fit: BoxFit.cover,
+            //       ),
+            //     ),
+            //   ),
+            //   placeholder: (context, url) =>
+            //       const Center(child: CircularProgressIndicator()),
+            //   errorWidget: (context, url, error) => const Icon(Icons.error),
+            // ),
+          ]),
         ),
         SizedBox(
           height: 15.0,
@@ -107,5 +141,49 @@ class HeroSection extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class ImageSlider extends StatelessWidget {
+  final List<String> all_images;
+
+  const ImageSlider({
+    super.key,
+    required this.all_images,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        height: 300.0,
+        width: MediaQuery.of(context).size.width,
+        child: FlutterCarousel(
+          options: CarouselOptions(
+            height: 300.0,
+            viewportFraction: 1,
+            showIndicator: true,
+            slideIndicator: CircularSlideIndicator(),
+          ),
+          items: all_images.map((i) {
+            return Builder(
+              builder: (BuildContext context) {
+                return CachedNetworkImage(
+                  imageUrl: i,
+                  imageBuilder: (context, imageProvider) => Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: imageProvider,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ),
+                  placeholder: (context, url) =>
+                      const Center(child: CircularProgressIndicator()),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                );
+              },
+            );
+          }).toList(),
+        ));
   }
 }
