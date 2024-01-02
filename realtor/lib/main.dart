@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/home.dart';
 import 'package:realtor/screens/Favorite/favorite.dart';
+import 'package:realtor/screens/authScreens/login.dart';
+import 'package:realtor/screens/authScreens/signup.dart';
 import 'package:realtor/screens/feed/feed.dart';
 import 'package:realtor/screens/findHomes.dart';
 import 'package:realtor/screens/myHomes/myhome.dart';
@@ -41,7 +43,10 @@ class MyApp extends StatelessWidget {
               color: Colors.black,
             ),
           )),
-      home: const Home(),
+      home: const
+          //SignUp()
+          //LoginScreen(),
+          Home(),
     );
   }
 }
