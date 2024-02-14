@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ListedBy extends StatelessWidget {
-  final String? name;
+  //final String? name;
+  final int? name;
   const ListedBy({
     super.key,
     this.name,

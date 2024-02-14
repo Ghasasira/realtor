@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:realtor/binding/controller_binding.dart';
+import 'package:realtor/binding/dependencyInjection.dart';
 import 'package:realtor/controllers/propertyController.dart';
 import 'package:realtor/home.dart';
 import 'package:realtor/screens/Favorite/favorite.dart';
@@ -14,6 +16,7 @@ import 'package:realtor/screens/propertyDetails.dart';
 
 void main() {
   runApp(const MyApp());
+  DependancyInjection.initialize();
 }
 
 class MyApp extends StatelessWidget {
@@ -22,9 +25,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    final PropertyController propertyController = PropertyController();
-    Get.put(propertyController);
+    //final PropertyController propertyController = PropertyController();
+    //Get.put(propertyController);
     return GetMaterialApp(
+      initialBinding: ControllerBinding(),
       debugShowCheckedModeBanner: false,
       //theme:,
       theme: ThemeData(

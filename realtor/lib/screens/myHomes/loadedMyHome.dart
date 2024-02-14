@@ -48,8 +48,9 @@ class LoadedMyHome extends StatelessWidget {
                     baths: propertyController.myProperty[index].baths,
                     sqft: propertyController.myProperty[index].sqft,
                     street: propertyController.myProperty[index].street,
-                    city: propertyController.myProperty[index].city,
-                    state: propertyController.myProperty[index].state,
+                    description:
+                        propertyController.myProperty[index].description,
+                    keywords: propertyController.myProperty[index].keywords,
                     listedBy: propertyController.myProperty[index].listedBy,
                     id: propertyController.myProperty[index].id,
                     images: propertyController.myProperty[index].images!,

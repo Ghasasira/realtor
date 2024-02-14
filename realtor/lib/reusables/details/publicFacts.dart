@@ -44,16 +44,16 @@ class PublicFacts extends StatelessWidget {
         ),
         DetailsRow(
           label: "Year Built",
-          value: controller.singleHouse[0].style,
+          value: controller.singleHouse[0].built,
         ),
         DetailsRow(
           label: "Year Renovated",
           value: "-",
         ),
-        DetailsRow(
-          label: "City",
-          value: controller.singleHouse[0].city,
-        ),
+        // DetailsRow(
+        //   label: "City",
+        //   value: controller.singleHouse[0].city,
+        // ),
         DetailsRow(
           label: "APN",
           value: "-",

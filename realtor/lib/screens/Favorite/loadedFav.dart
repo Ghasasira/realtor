@@ -144,18 +144,18 @@ class LoadedFav extends StatelessWidget {
                   baths: propertyController.favorites[index].baths,
                   sqft: propertyController.favorites[index].sqft,
                   street: propertyController.favorites[index].street,
-                  city: propertyController.favorites[index].city,
-                  state: propertyController.favorites[index].state,
+                  description: propertyController.favorites[index].description,
+                  keywords: propertyController.favorites[index].keywords,
                   listedBy: propertyController.favorites[index].listedBy,
                   id: propertyController.favorites[index].id,
-                  images: propertyController.favorites[index].images!,
+                  images: propertyController.favorites[index].images,
                 ),
               );
             },
           ),
         ),
         SizedBox(
-          height: 5.0,
+          height: 10.0,
         ),
       ],
     );

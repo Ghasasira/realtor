@@ -28,8 +28,12 @@ class HeroSection extends StatelessWidget {
             ),
             ImageSlider(
               all_images: [
-                controller.singleHouse[0].images[0],
-                controller.singleHouse[0].images[1],
+                "https://www.livehome3d.com/assets/img/social/how-to-design-a-house.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-98v8uFxE3GeIYJE6X5DG1wgu-vKgk8V__Q&usqp=CAU",
+                "https://th.bing.com/th/id/R.65f90aeccf6e28eeb9a31c71fcd6d70f?rik=YUWx%2f4LbKGrsKw&pid=ImgRaw&r=0",
+
+                // controller.singleHouse[0].images[0],
+                // controller.singleHouse[0].images[1],
               ],
               //image: controller.singleHouse[0].images[0],
             )
@@ -134,11 +138,11 @@ class HeroSection extends StatelessWidget {
           controller.singleHouse[0].street.toUpperCase(),
           style: TextStyle(fontSize: 16, color: Colors.black),
         ),
-        Text(
-          "${controller.singleHouse[0].city}, ${controller.singleHouse[0].state}"
-              .toUpperCase(),
-          style: TextStyle(fontSize: 16, color: Colors.black),
-        ),
+        // Text(
+        //   "${controller.singleHouse[0].city}, ${controller.singleHouse[0].state}"
+        //       .toUpperCase(),
+        //   style: TextStyle(fontSize: 16, color: Colors.black),
+        // ),
       ],
     );
   }

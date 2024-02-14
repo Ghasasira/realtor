@@ -51,22 +51,19 @@ class FeedLoaded extends StatelessWidget {
                             propertyController.filteredFeedProperty[index].sqft,
                         street: propertyController
                             .filteredFeedProperty[index].street,
-                        city:
-                            propertyController.filteredFeedProperty[index].city,
-                        state: propertyController
-                            .filteredFeedProperty[index].state,
+                        description: propertyController
+                            .filteredFeedProperty[index].description,
+                        keywords: propertyController
+                            .filteredFeedProperty[index].keywords,
                         listedBy: propertyController
                             .filteredFeedProperty[index].listedBy,
                         id: propertyController.filteredFeedProperty[index].id,
                         images: propertyController
-                            .filteredFeedProperty[index].images!),
+                            .filteredFeedProperty[index].images),
                   );
                 },
               ),
             ),
-            // SizedBox(
-            //   height: 400.0,
-            // ),
           ],
         ),
       ),
@@ -141,29 +138,6 @@ class _TopSortBarState extends State<TopSortBar> {
           );
         }).toList(),
       ),
-      //  ListView.builder(
-      //   scrollDirection: Axis.horizontal,
-      //   itemCount: 7,
-      //   itemBuilder: (context, index) {
-      // return Padding(
-      //   padding: const EdgeInsets.all(10.0),
-      //   child: Container(
-      //     height: 35.0,
-      //     decoration: BoxDecoration(
-      //       border: Border.all(
-      //         color: Colors.black,
-      //       ),
-      //       borderRadius: BorderRadius.circular(10.0),
-      //     ),
-      //     child: Center(
-      //         child: Padding(
-      //       padding: EdgeInsets.only(left: 10.0, right: 10.0),
-      //       child: Text('new'),
-      //     )),
-      //   ),
-      // );
-      //   },
-      // ),
     );
   }
 }

@@ -63,13 +63,13 @@ class KeyDetails extends StatelessWidget {
                 value: controller.singleHouse[0].style,
               ),
               DetailsRow(
-                label: "City",
-                value: controller.singleHouse[0].city,
+                label: "Street",
+                value: controller.singleHouse[0].street,
               ),
-              DetailsRow(
-                label: "State",
-                value: controller.singleHouse[0].state,
-              ),
+              // DetailsRow(
+              //   label: "State",
+              //   value: controller.singleHouse[0].state,
+              // ),
               DetailsRow(
                 label: "MLS#",
                 value: "0234789",

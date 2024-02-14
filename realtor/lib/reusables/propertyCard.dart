@@ -11,17 +11,17 @@ import 'package:realtor/screens/propertyDetails.dart';
 class PropertyCard extends StatelessWidget {
   final Widget? bottom;
   final String? page;
-  final double? price;
-  final double? beds;
-  final double? baths;
-  final double? sqft;
+  final int? price;
+  final int? beds;
+  final int? baths;
+  final int? sqft;
   final String? street;
-  final String? city;
-  final String? state;
+  final String? description;
+  final List<String>? keywords;
   final String? status;
   final int? id;
-  final String? listedBy;
-  final List images;
+  final int? listedBy;
+  final List? images;
   final bool? fav;
   PropertyCard({
     super.key,
@@ -32,12 +32,12 @@ class PropertyCard extends StatelessWidget {
     this.beds,
     this.price,
     this.sqft,
-    this.state,
-    this.city,
+    this.description,
+    this.keywords,
     this.status,
     this.street,
     this.id,
-    required this.images,
+    this.images,
     this.fav,
   });
 
@@ -62,6 +62,7 @@ class PropertyCard extends StatelessWidget {
       child: Card(
         elevation: 5.0,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -79,7 +80,8 @@ class PropertyCard extends StatelessWidget {
                         ),
                       ),
                       CachedNetworkImage(
-                        imageUrl: images[0],
+                        imageUrl: //images![0] ??
+                            "https://www.livehome3d.com/assets/img/social/how-to-design-a-house.jpg",
                         imageBuilder: (context, imageProvider) => Container(
                           height: 250.0,
                           width: MediaQuery.of(context).size.width,
@@ -112,7 +114,7 @@ class PropertyCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(5.0),
                       child: Text(
-                        status!, // "For Sale",
+                        " For $status ", // "For Sale",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -156,7 +158,7 @@ class PropertyCard extends StatelessWidget {
                         Wrap(
                           children: [
                             Text(
-                              "$street, $city, $state",
+                              "$street",
                               style: TextStyle(
                                   fontSize: 16.0, fontWeight: FontWeight.w500),
                             ),
@@ -178,18 +180,11 @@ class PropertyCard extends StatelessWidget {
                         // iconDisabledColor: Colors.white,
                         valueChanged: (_) {
                           int propId = id!;
-                          propertyController.addToFav(propId);
+                          //propertyController.addToFav(propId);
                           print(fav);
                         },
                       ),
 
-                      /*IconButton(
-                        onPressed: () {
-                          int propId = id!;
-                          propertyController.addToFav(propId);
-                        },
-                        icon: Icon(Icons.favorite_border_outlined),
-                      ),*/
                       IconButton(
                         onPressed: () {},
                         icon: Icon(Icons.share_outlined),
@@ -198,6 +193,21 @@ class PropertyCard extends StatelessWidget {
                   ),
                 )
               ],
+            ),
+            Divider(),
+            Padding(
+              padding: const EdgeInsets.only(
+                left: 8.0,
+              ),
+              child: Wrap(
+                children: [
+                  Text(
+                    description!,
+                    style:
+                        TextStyle(fontSize: 15.0, fontWeight: FontWeight.w500),
+                  ),
+                ],
+              ),
             ),
             bottom!
           ],
